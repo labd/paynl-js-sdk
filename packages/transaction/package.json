@@ -1,6 +1,6 @@
 {
   "name": "@labdigital/paynl-transaction",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "PAY. Transaction Gateway Unit API's",
   "module": "./dist/index.js",
   "main": "./dist/index.cjs",
