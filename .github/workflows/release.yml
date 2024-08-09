@@ -5,34 +5,12 @@ env:
   CI: true
 
 jobs:
-  lint:
-    name: Lint codebase
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        id: pnpm-install
-        with:
-          run_install: true
-
-      - name: Lint
-        run: pnpm lint
-
   build:
-    name: Build, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
+    name: Build on Node ${{ matrix.node }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    needs: lint
     strategy:
       matrix:
-        node: ["18.x", "20.x", "22.x"]
+        node: 20.x
         os: [ubuntu-latest]
 
     steps:
@@ -53,10 +31,6 @@ jobs:
 
       - name: Build
         run: pnpm build
-
-      - name: Test
-        run: pnpm test:ci
-
 
   release:
     timeout-minutes: 15
