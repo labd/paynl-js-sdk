@@ -1,4 +1,4 @@
-import TurnoverGroup from './TurnoverGroup.js';
+import TurnoverGroup from './TurnOverGroup.js';
 
 const GetTurnovergroups = {
   "metadata": {

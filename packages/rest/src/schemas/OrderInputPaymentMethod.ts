@@ -4,6 +4,7 @@ import OrderPaymentMethodIDeal from './OrderPaymentMethodIDeal.js';
 import OrderPaymentMethodKlarna from './OrderPaymentMethodKlarna.js';
 import OrderPaymentMethodPayByBank from './OrderPaymentMethodPayByBank.js';
 import OrderPaymentMethodPin from './OrderPaymentMethodPin.js';
+import OrderPaymentMethodPrzelewy24 from './OrderPaymentMethodPrzelewy24.js';
 import OrderPaymentMethodSprayPay from './OrderPaymentMethodSprayPay.js';
 
 const OrderInputPaymentMethod = {
@@ -27,7 +28,7 @@ const OrderInputPaymentMethod = {
         OrderPaymentMethodPin,
         OrderPaymentMethodDirectDebit,
         OrderPaymentMethodKlarna,
-        "::convert::OrderPaymentMethodPrzelewy24",
+        OrderPaymentMethodPrzelewy24,
         OrderPaymentMethodPayByBank,
         OrderPaymentMethodSprayPay
       ],
