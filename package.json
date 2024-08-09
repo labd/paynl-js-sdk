@@ -1,0 +1,16 @@
+{
+  "name": "@labdigital/paynl",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "api": "7.0.0-beta.8",
+    "tsup": "^8.1.0",
+    "turbo": "^2.0.12"
+  },
+  "packageManager": "pnpm@8.15.8"
+}

@@ -1,0 +1,26 @@
+import type { FromSchema } from '@readme/api-core/types';
+import type * as schemas from './schemas.js';
+
+export type Address = FromSchema<typeof schemas.Address>;
+export type Amount = FromSchema<typeof schemas.Amount>;
+export type BankAccount = FromSchema<typeof schemas.BankAccount>;
+export type Company = FromSchema<typeof schemas.Company>;
+export type Customer = FromSchema<typeof schemas.Customer>;
+export type Error = FromSchema<typeof schemas.Error>;
+export type GetTransactionsTransactionidMetadataParam = FromSchema<typeof schemas.GetTransactionsTransactionid.metadata>;
+export type GetTransactionsTransactionidStatusMetadataParam = FromSchema<typeof schemas.GetTransactionsTransactionidStatus.metadata>;
+export type Integration = FromSchema<typeof schemas.Integration>;
+export type Notification = FromSchema<typeof schemas.Notification>;
+export type Order = FromSchema<typeof schemas.Order>;
+export type PaymentMethod = FromSchema<typeof schemas.PaymentMethod>;
+export type PostTransactionsBodyParam = FromSchema<typeof schemas.PostTransactions.body>;
+export type PostTransactionsResponse201 = FromSchema<typeof schemas.PostTransactions.response['201']>;
+export type Product = FromSchema<typeof schemas.Product>;
+export type Stats = FromSchema<typeof schemas.Stats>;
+export type Status = FromSchema<typeof schemas.Status>;
+export type Transaction = FromSchema<typeof schemas.Transaction>;
+export type TransactionStatus = FromSchema<typeof schemas.TransactionStatus>;
+export type TransactionStatusPaymentData = FromSchema<typeof schemas.TransactionStatusPaymentData>;
+export type TransactionStatusPaymentMethod = FromSchema<typeof schemas.TransactionStatusPaymentMethod>;
+export type TransferData = FromSchema<typeof schemas.TransferData>;
+export type Violation = FromSchema<typeof schemas.Violation>;

@@ -1,0 +1,46 @@
+version: 3
+
+tasks:
+  generate-sdk:
+    cmds:
+      - rm -rf .api
+      - rm -rf packages/**/src
+      - mv pnpm-workspace.yaml pnpm-workspace.yaml.bak
+
+      - task: generate-package
+        vars:
+          name: rest
+          openapiSpec: "@paynl/v3.0#31sf4ny31lwhi65n3"
+
+      - task: generate-package
+        vars:
+          name: connect
+          openapiSpec: "@paynl/v3.0#ill1ilz6wn1w0"
+
+      - task: generate-package
+        vars:
+          name: transaction
+          openapiSpec: "@paynl/v3.0#x7e32sq1klq3tp8e6"
+
+      - mv pnpm-workspace.yaml.bak pnpm-workspace.yaml
+
+
+      # # Lint, format, cleanup
+      # - pnpm lint:fix:paynl-sdk || echo "== Linter gave errors, but continuing format and cleanup; please review errors"
+      # - pnpm format:fix:paynl-sdk
+      # - pnpm uninstall @api/@paynl/connect
+      # - pnpm uninstall @api/@paynl/transaction
+      # - pnpm install
+    vars:
+      openapiRestSpec: "@paynl/v3.0#4qpc31ulsa4duon"
+      openapiConnectSpec: "@paynl/v3.0#31sf4ny31lwhi65n3"
+      openapiTransactionSpec: "@paynl/v3.0#x7e32sq1klq3tp8e6"
+      excludes: "{node_modules,package.json,README.md,tsconfig.json}"
+
+  generate-package:
+      - node node_modules/api/bin/api.js install --yes --identifier 'paynl-{{ .name }}' '{{ .openapiSpec }}' || true
+      - mv .api/apis/paynl-{{ .name }}/src packages/{{ .name }}
+      - mv .api/apis/paynl-{{ .name }}/{README.md,openapi.json,tsconfig.json} packages/{{ .name }}/
+      - sed -i '' 's#@api/paynl-{{ .name }}#@labdigital/paynl-{{ .name }}#g' packages/{{ .name }}/README.md
+      # - rm -rf .api
+      - pnpm uninstall @api/paynl-{{ .name }}
