@@ -1,6 +1,6 @@
 {
   "name": "@labdigital/paynl-rest",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "The restful API for interacting with the Pay. Transaction Gateway Unit.",
   "module": "./dist/index.js",
   "main": "./dist/index.cjs",
