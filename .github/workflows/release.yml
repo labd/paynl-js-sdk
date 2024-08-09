@@ -6,7 +6,7 @@ env:
 
 jobs:
   release:
-    name: Build on Node ${{ matrix.node }} and ${{ matrix.os }}
+    name: Build and release
     runs-on: ubuntu-latest
 
     steps:
