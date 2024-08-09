@@ -1,12 +1,12 @@
 import SDK from './sdk.js';
 
 /**
- * Pay. Transaction Gateway Unit API
+ * PAY. Global Management System API's
  *
- * The restful API for interacting with the Pay. Transaction Gateway Unit.
+ * A restful journey to your payments.
  *
- * @author Pay. <support@pay.nl>
- * @see {@link https://www.pay.nl}
+ * @author <support@pay.nl>
+ * @see {@link https://www.pay.nl/en/terms-conditions Terms of Service}
  */
 const createSDK = (() => { return new SDK(); })();
 
