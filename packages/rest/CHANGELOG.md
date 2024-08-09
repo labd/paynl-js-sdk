@@ -1,5 +1,11 @@
 # @labdigital/paynl-rest
 
+## 0.2.0
+
+### Minor Changes
+
+- 20ab56f: Resolve generate issues and remove dist files
+
 ## 0.1.1
 
 ### Patch Changes
