@@ -1,7 +1,7 @@
 {
   "name": "@labdigital/paynl-connect",
   "version": "0.0.0",
-  "description": "PAY. Transaction Gateway Unit API's",
+  "description": "PAY. Global Management System API's",
   "module": "./dist/index.js",
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
