@@ -23,6 +23,9 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: "pnpm"
+          # changesets/action v2 no longer writes an .npmrc from NPM_TOKEN;
+          # setup-node writes one that reads NODE_AUTH_TOKEN instead.
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -31,12 +34,12 @@ jobs:
         run: pnpm build
 
       - name: Create and publish versions
-        uses: changesets/action@6a0a831ff30acef54f2c6aa1cbbc1096b066edaf # v1.7.0
+        uses: changesets/action@ae32849d5ba541f9ae29e40e22a623bc13562f51 # v2.1.2
         if: github.ref == 'refs/heads/main'
         with:
-          title: "Release new version"
-          commit: "update version"
-          publish: pnpm publish:ci
+          pr-title: "Release new version"
+          commit-message: "update version"
+          publish-script: pnpm publish:ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
