@@ -33,6 +33,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "engines": {
+    "node": ">=20.10.0"
+  },
   "scripts": {
     "build": "tsup",
     "tsc": "tsc --noEmit"
@@ -42,10 +45,10 @@
     "openapi.json"
   ],
   "dependencies": {
-    "@readme/api-core": "^7.0.0-beta.6"
+    "@readme/api-core": "^7.0.3"
   },
   "devDependencies": {
-    "tsup": "^8.1.0",
+    "tsup": "^8.5.1",
     "typescript": "^5.2.2"
   },
   "tsup": {
