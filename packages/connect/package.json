@@ -37,7 +37,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "build": "tsup",
+    "build": "tsdown",
     "tsc": "tsc --noEmit"
   },
   "files": [
@@ -48,25 +48,7 @@
     "@readme/api-core": "^7.0.3"
   },
   "devDependencies": {
-    "tsup": "^8.5.1",
+    "tsdown": "^0.23.1",
     "typescript": "^5.4.5"
-  },
-  "tsup": {
-    "cjsInterop": true,
-    "clean": true,
-    "dts": true,
-    "entry": [
-      "./src/index.ts",
-      "./src/sdk.ts",
-      "./src/types.ts"
-    ],
-    "format": [
-      "esm",
-      "cjs"
-    ],
-    "minify": false,
-    "shims": true,
-    "sourcemap": true,
-    "splitting": true
   }
 }
