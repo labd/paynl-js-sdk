@@ -1,20 +1,13 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "tasks": {
-    "topo": {
-      "dependsOn": [
-        "^topo"
-      ]
-    },
-    "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "outputs": [
-        "dist/**",
-        "README.md"
-      ]
-    }
-  },
-  "ui": "stream"
+	"$schema": "https://turbo.build/schema.json",
+	"tasks": {
+		"topo": {
+			"dependsOn": ["^topo"]
+		},
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": ["dist/**", "README.md"]
+		}
+	},
+	"ui": "stream"
 }
