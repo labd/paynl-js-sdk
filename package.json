@@ -11,15 +11,17 @@
 		"check": "biome check && pnpm typecheck",
 		"format": "biome check --write",
 		"lint": "biome check",
-		"typecheck": "pnpm -r tsc",
+		"lint:package": "pnpm -r lint:package",
 		"publish:ci": "pnpm build && pnpm changeset publish",
-		"publish:version": "pnpm changeset version && pnpm format"
+		"publish:version": "pnpm changeset version && pnpm format",
+		"typecheck": "pnpm -r tsc"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.15",
 		"@changesets/cli": "^3.0.3",
 		"api": "7.0.4",
-		"tsup": "^8.5.1",
+		"publint": "^0.3.25",
+		"tsdown": "^0.23.1",
 		"turbo": "^2.11.10"
 	},
 	"packageManager": "pnpm@12.12.0",
