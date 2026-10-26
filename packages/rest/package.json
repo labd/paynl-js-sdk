@@ -1,74 +1,78 @@
 {
-  "name": "@labdigital/paynl-rest",
-  "version": "0.2.0",
-  "description": "The restful API for interacting with the Pay. Transaction Gateway Unit.",
-  "module": "./dist/index.js",
-  "main": "./dist/index.cjs",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./sdk": {
-      "import": "./dist/sdk.js",
-      "require": "./dist/sdk.cjs"
-    },
-    "./types": {
-      "import": "./dist/types.js",
-      "require": "./dist/types.cjs"
-    },
-    "./package.json": "./package.json"
-  },
-  "type": "module",
-  "keywords": [
-    "Pay.nl"
-  ],
-  "author": "Lab Digital <opensource@labdigital.nl>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/labd/paynl-js-sdk.git",
-    "directory": "packages/rest"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  },
-  "engines": {
-    "node": ">=22"
-  },
-  "scripts": {
-    "build": "tsup",
-    "tsc": "tsc --noEmit"
-  },
-  "files": [
-    "dist",
-    "openapi.json"
-  ],
-  "dependencies": {
-    "@readme/api-core": "^7.0.3"
-  },
-  "devDependencies": {
-    "tsup": "^8.5.1",
-    "typescript": "^5.2.2"
-  },
-  "tsup": {
-    "cjsInterop": true,
-    "clean": true,
-    "dts": true,
-    "entry": [
-      "./src/index.ts",
-      "./src/sdk.ts",
-      "./src/types.ts"
-    ],
-    "format": [
-      "esm",
-      "cjs"
-    ],
-    "minify": false,
-    "shims": true,
-    "sourcemap": true,
-    "splitting": true
-  }
+	"name": "@labdigital/paynl-rest",
+	"version": "0.2.0",
+	"description": "The restful API for interacting with the Pay. Transaction Gateway Unit.",
+	"module": "./dist/index.js",
+	"main": "./dist/index.cjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		},
+		"./sdk": {
+			"import": "./dist/sdk.js",
+			"require": "./dist/sdk.cjs"
+		},
+		"./types": {
+			"import": "./dist/types.js",
+			"require": "./dist/types.cjs"
+		},
+		"./package.json": "./package.json"
+	},
+	"type": "module",
+	"keywords": [
+		"Pay.nl"
+	],
+	"author": "Lab Digital <opensource@labdigital.nl>",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/labd/paynl-js-sdk.git",
+		"directory": "packages/rest"
+	},
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
+	},
+	"engines": {
+		"node": ">=22"
+	},
+	"scripts": {
+		"build": "tsup",
+		"tsc": "tsc --noEmit"
+	},
+	"files": [
+		"dist",
+		"openapi.json"
+	],
+	"dependencies": {
+		"@readme/api-core": "^7.0.3"
+	},
+	"devDependencies": {
+		"tsup": "^8.5.1",
+		"typescript": "^6.0.3"
+	},
+	"tsup": {
+		"cjsInterop": true,
+		"clean": true,
+		"dts": {
+			"compilerOptions": {
+				"ignoreDeprecations": "6.0"
+			}
+		},
+		"entry": [
+			"./src/index.ts",
+			"./src/sdk.ts",
+			"./src/types.ts"
+		],
+		"format": [
+			"esm",
+			"cjs"
+		],
+		"minify": false,
+		"shims": true,
+		"sourcemap": true,
+		"splitting": true
+	}
 }
