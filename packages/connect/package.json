@@ -1,6 +1,6 @@
 {
 	"name": "@labdigital/paynl-connect",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "PAY. Global Management System API's",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
