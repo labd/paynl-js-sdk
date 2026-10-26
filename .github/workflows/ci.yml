@@ -33,3 +33,6 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+      - name: Lint packages (publint)
+        run: pnpm lint:package
