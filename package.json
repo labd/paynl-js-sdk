@@ -1,24 +1,29 @@
 {
-  "name": "@labdigital/paynl",
-  "private": true,
-  "license": "UNLICENSED",
-  "type": "module",
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "build": "turbo build",
-    "publish:ci": "pnpm build && pnpm changeset publish"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.8.3",
-    "@changesets/cli": "^3.0.3",
-    "api": "7.0.4",
-    "tsup": "^8.5.1",
-    "turbo": "^2.11.10"
-  },
-  "packageManager": "pnpm@12.12.0",
-  "engines": {
-    "node": ">=22"
-  }
+	"name": "@labdigital/paynl",
+	"private": true,
+	"license": "UNLICENSED",
+	"type": "module",
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"build": "turbo build",
+		"check": "biome check && pnpm typecheck",
+		"format": "biome check --write",
+		"lint": "biome check",
+		"typecheck": "pnpm -r tsc",
+		"publish:ci": "pnpm build && pnpm changeset publish",
+		"publish:version": "pnpm changeset version && pnpm format"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.5.15",
+		"@changesets/cli": "^3.0.3",
+		"api": "7.0.4",
+		"tsup": "^8.5.1",
+		"turbo": "^2.11.10"
+	},
+	"packageManager": "pnpm@12.12.0",
+	"engines": {
+		"node": ">=22"
+	}
 }
