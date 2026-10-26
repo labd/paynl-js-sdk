@@ -1,18 +1,29 @@
 {
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "defaultBranch": "main"
-  },
-  "json": {
-    "parser": {
-      "allowComments": true
-    }
-  },
-  "formatter": {
-    "enabled": true
-  },
-  "linter": {
-    "enabled": false
-  }
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true,
+		"defaultBranch": "main"
+	},
+	"files": {
+		"includes": ["**", "!**/openapi.json", "!**/CHANGELOG.md"]
+	},
+	"json": {
+		"parser": {
+			"allowComments": true
+		}
+	},
+	"formatter": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"preset": "recommended",
+			"suspicious": {
+				"noShadowRestrictedNames": "off"
+			}
+		}
+	}
 }
