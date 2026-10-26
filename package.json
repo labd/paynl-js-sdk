@@ -11,7 +11,6 @@
 		"check": "biome check && pnpm typecheck",
 		"format": "biome check --write",
 		"lint": "biome check",
-		"lint:package": "pnpm -r lint:package",
 		"publish:ci": "pnpm build && pnpm changeset publish",
 		"publish:version": "pnpm changeset version && pnpm format",
 		"typecheck": "pnpm -r tsc"

@@ -39,7 +39,6 @@
 	},
 	"scripts": {
 		"build": "tsdown",
-		"lint:package": "publint --strict",
 		"tsc": "tsc --noEmit"
 	},
 	"files": [
