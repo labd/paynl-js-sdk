@@ -1,4 +1,4 @@
-import SDK from './sdk.js';
+import SDK from "./sdk.js";
 
 /**
  * PAY. Transaction Gateway Unit API's
@@ -8,6 +8,8 @@ import SDK from './sdk.js';
  * @author <support@pay.nl>
  * @see {@link https://www.pay.nl/en/terms-conditions Terms of Service}
  */
-const createSDK = (() => { return new SDK(); })();
+const createSDK = (() => {
+	return new SDK();
+})();
 
 export default createSDK;
